@@ -2,6 +2,24 @@
 
 本資料夾整合了 v2 與 v3 的全部內容:`mac`(rd 累加器與 R4 形式)、`mac2`(封包雙 16-bit 乘加)、展開與主機計時實驗、時鐘模型、Amdahl 稀釋與編譯器基準。
 
+## 版本目錄
+
+| 版本 | 目錄 | 主要內容 |
+|---|---|---|
+| v2 | [`mac_demo_v2/`](mac_demo_v2/) | rd 累加器與 R4 形式、`rd = x0` 語意、溢位測試、展開迴圈、主機計時 |
+| v3 | [`mac_demo_v3/`](mac_demo_v3/) | 封包雙 16-bit 乘加 `mac2`、INT16 benchmark |
+| v4 | [`mac_demo_v4/`](mac_demo_v4/) | `mac2` 進入 pipeline 模型、部分積估計、編譯器基準、Amdahl、消融實驗 |
+
+目前的整合版即本目錄(`mac_demo/`),內容與 v4 相同並包含其測試。
+
+### 消融實驗圖
+
+![MAC 策略消融實驗](mac_demo_v4/figures/ablation.png)
+
+圖中數字為模型估計,不是實測。圖檔由 `mac_demo_v4/benchmark/plot_ablation.py` 產生,向量版本為 [`ablation.svg`](mac_demo_v4/figures/ablation.svg)。
+
+---
+
 ## 一、新增內容
 
 ### 1.1 封包雙 16-bit 乘加 `mac2`

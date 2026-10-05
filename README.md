@@ -46,6 +46,9 @@
 | `MAC`(乘加) | 教師 / 助教 | Week 7 課堂示範 |
 | `TOP2_4`(4×INT8 找最大與第二大) | 進階學長 | 展示 packed data 與比較網路的設計深度 |
 
+#### MAC
+![img](mac_demo/mac_demo_v4/figures/ablation.png)
+
 ## 統一指令格式
 
 所有自訂指令採用 R-type,操作碼為 custom-0(`0001011`,0x0B)。`funct3`、`funct7` 由教師統一分配:
