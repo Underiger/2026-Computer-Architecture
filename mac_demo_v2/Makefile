@@ -3,7 +3,7 @@ CFLAGS  ?= -std=c11 -Wall -Wextra -Werror -O2
 PYTHON  ?= python3
 RV_GCC  ?= riscv64-elf-gcc
 
-.PHONY: test test-c test-py check-riscv bench-model bench-host bench-unroll bench-latency bench-packed bench-amdahl clean
+.PHONY: test test-c test-py check-riscv bench-model bench-host bench-unroll bench-latency clean
 
 test: test-c test-py
 
@@ -32,12 +32,6 @@ bench-unroll:
 
 bench-latency:
 	$(PYTHON) -c "from pipeline_model import compare_mac_latency as c; [print(r) for r in c(n=1024)]"
-
-bench-packed:
-	$(PYTHON) -c "from benchmark.packed import run_packed_all as r; [print(x) for x in r()]"
-
-bench-amdahl:
-	$(PYTHON) -c "from benchmark.amdahl import dilution_table; from benchmark.compiler_baseline import compiler_speedup_vs_mac2 as c; from benchmark.packed import run_packed_case as r; s=r(256)['speedup_lh']; print('kernel speedup (lh baseline):', round(s,3)); [print(x) for x in dilution_table(s, fractions=(1.0,0.8,0.5,0.25))]; print('compiler baseline speedup:', round(c(),3))"
 
 clean:
 	rm -f test_mac host_timing riscv_probe.o

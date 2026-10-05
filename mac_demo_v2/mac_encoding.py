@@ -112,35 +112,3 @@ def apply_mac(regs, rd: int, rs1: int, rs2: int) -> None:
     if rd == 0:
         return
     regs[rd] = mac_golden(regs[rd], regs[rs1], regs[rs2])
-
-
-FUNCT3_MAC2 = 0b010
-
-
-def encode_mac2(rd: int, rs1: int, rs2: int) -> int:
-    """Packed dual-16-bit form: rd = rd + lo16(rs1)*lo16(rs2) + hi16(rs1)*hi16(rs2)."""
-    for name, r in (("rd", rd), ("rs1", rs1), ("rs2", rs2)):
-        if not 0 <= r <= 31:
-            raise ValueError(f"{name} out of range: {r}")
-    return (FUNCT7_MAC << 25) | (rs2 << 20) | (rs1 << 15) | (FUNCT3_MAC2 << 12) | (rd << 7) | OPCODE_CUSTOM0
-
-
-def decode_mac2(word: int):
-    """Return (rd, rs1, rs2) for a packed MAC word, else None."""
-    if word & 0x7F != OPCODE_CUSTOM0:
-        return None
-    if (word >> 12) & 0x7 != FUNCT3_MAC2 or (word >> 25) != FUNCT7_MAC:
-        return None
-    return (word >> 7) & 0x1F, (word >> 15) & 0x1F, (word >> 20) & 0x1F
-
-
-def _sext16(x: int) -> int:
-    x &= 0xFFFF
-    return x - 0x10000 if x & 0x8000 else x
-
-
-def mac2_golden(acc: int, a: int, b: int) -> int:
-    """Dual 16-bit signed lanes: acc + lo*lo + hi*hi, wrapped to signed 32-bit."""
-    lo = _sext16(a) * _sext16(b)
-    hi = _sext16(a >> 16) * _sext16(b >> 16)
-    return mac_golden(acc, lo + hi, 1)
