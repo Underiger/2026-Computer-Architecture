@@ -18,13 +18,17 @@ C baseline → 標準 RISC-V 實作 → Custom Instruction 規格與 Encoding   
 - 分組方式:**11 組 4 人 + 2 組 5 人,共 13 組**,每組對應一個題目,不重複
 - 選題截止:**Week 5(2026/10/06)當週結束前**,由選題表單完成
 
-### 學生可選題目(14 題)
+### 學生可選題目(19 題)
 
 | 類別 | 題目 |
 |---|---|
 | 基礎運算類(7 題) | `ABS`、`MIN`、`AVG`、`CLAMP`、`ABSDIFF`、`THRESHOLD`、`MAXPIX` |
 | AI / 電腦視覺類(5 題) | `ReLU6`、`Leaky ReLU`、`CLIP`、`POPCOUNT`、`SAD` |
 | 網路類(2 題) | `NETMASK`(子網路遮罩套用)、`CSUM16`(IP checksum 一補數加法) |
+| 密碼學 / 雜湊類(1 題) | `ROTL`(循環左移) |
+| DSP 類(2 題) | `ADDSAT`(飽和加法)、`BITREV`(位元反轉) |
+| 字串 / 資料處理類(1 題) | `FINDZERO`(找 32-bit 字中的 0 byte) |
+| 算術類(1 題) | `CLZ`(前導零計數) |
 
 ### 示範題(不開放選題)
 
@@ -63,7 +67,7 @@ C baseline → 標準 RISC-V 實作 → Custom Instruction 規格與 Encoding   
 | W5 · 10/06 | Instruction Format / Machine Code | HW2 發布、選題確認 |
 | W6 · 10/13 | Compiler / Assembler 流程 | Checkpoint 1+2:C baseline、標準 RISC-V 實作 |
 | W7 · 10/20 | Computer Arithmetic、MAC Demo | 持續實作、示範題觀摩 |
-| W8 · 10/27 (停課,自主學習) | 期中整合 | 繳交 instruction count / clock 比較(期中前版本) |
+| W8 · 10/27 (停課,自主學習) | 期中整合 | **繳交書面報告(CP3)**:指令規格、編碼、instruction count 比較(期中前版本),不安排上台 |
 | W9 · 11/03 | **期中考**(涵蓋 W1–8) | — |
 | W10 · 11/10 | Processor Datapath | Checkpoint 4 開始 |
 | W11 · 11/17 | Single-Cycle Processor 與 Control | 分析 control signal 需求 |
