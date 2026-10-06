@@ -68,8 +68,8 @@
 | W2–W4 | 學生自行組隊 | — |
 | W5 · 10/06 | Instruction Format / Machine Code | HW2 發布、選題表單開放 |
 | 10/09(五) | — | **分組名單寄送助教截止** |
-| W6 · 10/13 | Compiler / Assembler 流程 | CP1 C baseline、CP2 RV32IM 實作 |
-| W7 · 10/20 | Computer Arithmetic、MAC Demo | 持續實作 |
+| W6 · 10/13 | Compiler / Assembler 流程 | CP1 C baseline |
+| W7 · 10/20 | Computer Arithmetic、MAC Demo | CP2 RV32IM 實作 |
 | W8 · 10/27(停課,自主學習) | 期中整合 | **CP3 書面報告繳交**(指令規格、編碼、指令數比較) |
 | W9 · 11/03 | **期中考**(涵蓋 W1–8) | — |
 | W10 · 11/10 | Processor Datapath | CP4 開始(期中後,規範待補) |
