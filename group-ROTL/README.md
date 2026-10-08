@@ -1,5 +1,8 @@
 # groupXX:ROTL(32-bit 循環左移)
 
+> **⚠️ 已搬遷:本專題的成品與後續更新都在 [Underiger/rotl](https://github.com/Underiger/rotl)。**
+> 這個 fork 裡的 `group-ROTL/` 停在 2026-10-08 的版本,不再更新。
+
 計算機組織 2026 學期專題。課程說明見 [DevSecOpsLab-CSIE-NPU/2026-Computer-Architecture](https://github.com/DevSecOpsLab-CSIE-NPU/2026-Computer-Architecture)。
 
 ```
